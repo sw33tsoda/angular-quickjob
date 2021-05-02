@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+.job-board {
+    max-width: 700px;
+    height: auto;
+    // background-color:grey;
+    margin:0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Raleway', sans-serif;
+    &__navbar {
+        display: flex;
+        &__item {
+            border-top: 1px solid silver;
+            border-left: 1px solid silver;
+            border-right: 1px solid silver;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(192, 192, 192, 0.5);
+            }
+            &:not(:last-child) {
+                border-right: none;
+            }
+            &--selected {
+                background-color:silver;
+                color:black;
+            }
+        }
+    }
+
+    &__list {
+        border:1px solid silver;
+        height: 500px;   
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: 200px;
+        column-gap: 5px;
+        row-gap: 5px !important;
+        overflow-y: scroll;
+        &__item {
+            border:1px solid silver;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            > div {
+                padding: 2px 4px 2px 4px;
+            }
+
+            &__position {
+                font-weight: bold;
+            }
+
+            &__level {
+                font-weight: bold;
+            }  
+
+            &__languages {
+                > p {
+                    display: inline-block;
+                    margin-right: 2.5px;
+                }
+                font-size: 0.85em;
+            }
+
+            &__description {
+                font-size: 0.75em;
+            }
+
+            &__diploma {
+                font-weight: bold;
+            }
+
+            &__company {
+                font-size: 0.85em;
+            }
+
+            &__email {
+                font-size: 0.85em;
+            }
+
+            &__expire-date {
+                position: absolute;
+                bottom: 4px;
+                right: 2px;
+            }
+        }
+    }
+
+    &__form-wrapper {
+        padding: 5px;
+        border-bottom: 1px solid silver;
+        border-left: 1px solid silver;
+        border-right: 1px solid silver;
+        width: 100%;
+        box-sizing: border-box;
+        &__form {
+            width: 100%;
+            
+            input {
+                border:1px solid silver;
+                width: 100%;
+            }
+
+            > div {
+                margin-bottom: 5px;
+
+                &:first-child {
+                    // padding-top: 5px;
+                }
+            }
+            
+            &__split {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                // padding: 0px 5px 0 5px;
+                box-sizing: border-box;
+                column-gap: 5px;
+
+                select {
+                    border:1px solid silver;
+                }
+            }
+            
+            &__single {
+                width: 100%;
+                // padding: 0px 5px 0 5px;
+                box-sizing: border-box;
+                &__description {
+                    width: 100%;
+                    resize: none;
+                }
+                
+                // &__selectedLanguages {
+                    //     border:1px solid silver;
+                    //     height: 50px;
+                    //     // box-sizing: border-box;
+                    //     display: flex;
+                    //     padding: 5px;
+                    //     column-gap: 5px;
+                    //     p {
+                        //         border:1px solid silver;
+                        //         padding: 0 2px 0 2px;
+                //         // border-radius: ;
+                //         &:hover {
+                //             background-color: silver;
+                //             cursor: pointer;
+                //         }
+                //     }
+                // }
+
+                &__languages {
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(6,auto);
+                    column-gap: 5px;
+                    row-gap: 5px;
+                    margin-top: 5px;
+
+                    // overflow: scroll;
+                    &__language {
+                        // display: inli    ne;
+                        // margin-right: 2.5px;
+                        &--selected {
+                            background-color:rgba(192, 192, 192, 0.5);
+                        }
+                        border:1px solid silver;
+                        padding: 0 2px 0 2px;
+                        // border-radius: ;
+                        &:hover {
+                            background-color: silver;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            button {
+                width: 100%;
+                border:1px solid silver;
+                height: 50px;
+                font-size: 16pt;
+            }
+        }
+    }
+}
